@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html,
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url('../img/336493.jpg');
+}
+
+a, a:hover {
+    text-decoration: none;
+}
+
+.top-bar {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 25px;
+    background-color: grey;
+}
+
+.top-bar span{
+    color: #FFF;
+}
+
+.top-bar ul {
+    list-style: none;
+    display: flex;
+}
+
+.top-bar li {
+    margin: 0px 5px;
+}
+.top-bar a{
+    color: #FFF;
+}
+
+.top-bar a:hover{
+    color: green;
+}
+
+nav {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #FF7200;
+    padding: 5px 20px;
+    display: flex;
+    align-items: center;
+}
+
+nav a{
+    font-size: 36px;
+    color: #FFF;
+}
+
+nav a:hover{
+    color: grey;
+}
+
+.logo {
+    flex: 1;
+}
+
+.logo a{
+    display: flex;
+    align-items: center;
+    font-size: px;
+}
+
+
+.logo a:hover{
+    color: #FFF;
+}
+
+.logo img {
+    width: 150px;
+    margin-right: 10px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.menu li {
+    padding: 15px 10px;
+    align-items: center;
+    list-style: none;
+}
+
+.toggle {
+    font-size: 30px;
+    display: none;
+}
+main {
+    margin-top: 50px;
+}
+
+.info {
+    background-color: #FFF;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.heading {
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 96px;
+}
+.heading h1:first-child {
+    color: #FF7200;
+}
+
+.heading strong {
+    color: #000;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.heading p{
+    color: grey;
+    font-size: 40px;
+}
+
+.row {
+    text-align: center;
+}
+
+.column {
+    margin-left: 45px;
+    float: left;
+    width: 45%;
+    padding: 5px;
+}
+
+.column:first-child {
+    background-color: #FF7200;
+}
+
+.column:last-child {
+    background-color: #1F1E21;
+}
+
+
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+@media screen and (max-width: 920px){
+    nav a{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 620px) {
+    nav{
+        display: block;
+        position: relative;
+        padding: 15px 20px;
+    }
+
+    .menu {
+        margin-top: 15px;
+        display: none;
+    }
+
+    .menu-active, .toggle{
+        display: block;
+    }
+
+    .toggle{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+}
+
