@@ -1,5 +1,12 @@
-<?php require ('../zelez-vaclav/partials/header.php') ?>
- 
+<?php require ('../zelez-vaclav/partials/header.php'); ?>
+<?php require ('../zelez-vaclav/config/connection.php'); ?>
+    <div class="popup">
+        <div class="popup-content">
+            <h1>X</h1>
+            <p><?php  ?>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto reiciendis, assumenda adipisci, voluptates porro eaque amet ducimus hic dignissimos laudantium sed blanditiis, nulla cum. Ut odit cum illum, pariatur similique magnam, dolore praesentium reprehenderit dolor minima quae ipsam, fugit voluptates. Non eligendi beatae dicta cupiditate unde incidunt, debitis inventore dolore sunt quis tempore mollitia veritatis est ipsam expedita. Repellat corrupti maxime sapiente perferendis earum, asperiores modi pariatur quod, ab distinctio mollitia animi tempora autem ratione tempore suscipit veniam eveniet amet in illo? Repellat aperiam in dolores sed nulla rerum libero, nostrum minima? Soluta, dolorem est? Beatae aspernatur eveniet explicabo aliquid?</p>
+            <h2>Železiarstvo <span>VÁCLAV</span></h2>
+        </div>
+    </div>
         <section class="info">
             <div class="heading">
                 <h1>
@@ -11,10 +18,10 @@
             </div>
             <div class="row">
                 <div class="column">
-                    <img src="img/banner-info.png" alt="info-banner">
+                    <img class="image" src="img/banner-info.png" alt="info-banner">
                 </div>
                 <div class="column">
-                    <img src="img/info-building.png" alt="info-building">
+                    <img class="image" src="img/info-building.png" alt="info-building">
                 </div>
             </div>
         </section>
@@ -25,16 +32,16 @@
                 <div class="slider">
                     <div class="slide-track">
                         <div class="slide">
-                            <img src="../zelez-vaclav/img/slide-img/rems.png" alt="">
+                            <img class="image" src="../zelez-vaclav/img/slide-img/rems.png" alt="">
                         </div>
                         <div class="slide">
-                            <img src="../zelez-vaclav/img/slide-img/makita.png" alt="">
+                            <img class="image" src="../zelez-vaclav/img/slide-img/makita.png" alt="">
                         </div>
                         <div class="slide">
-                            <img src="../zelez-vaclav/img/slide-img/bosch.png" alt="">
+                            <img class="image" src="../zelez-vaclav/img/slide-img/bosch.png" alt="">
                         </div>
                         <div class="slide">
-                            <img src="../zelez-vaclav/img/slide-img/dewalt.png" alt="">
+                            <img class="image" src="../zelez-vaclav/img/slide-img/dewalt.png" alt="">
                         </div>
                         <div class="slide">
                             <img src="../zelez-vaclav/img/slide-img/narex.png" alt="">
