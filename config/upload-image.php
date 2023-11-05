@@ -2,8 +2,6 @@
     require 'connection.php';
     if (isset($_POST["submit"])){
         $name = $_POST["name"];
-        $mark = $_POST["mark"];
-        $description = $_POST["description"];
         if($_FILES["image"]["error"] === 4){
            echo
                 "<script>

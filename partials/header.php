@@ -10,7 +10,7 @@
 <body>
     <nav>
         <div class="logo">
-            <a href="#"><img src="img/logo-nav.png" alt="zeleziarstvovaclav"></a>
+            <a href="index.php"><img src="img/logo-nav.png" alt="zeleziarstvovaclav"></a>
         </div>
         <div class="toggle">
             <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
