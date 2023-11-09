@@ -10,7 +10,6 @@
         else {
             echo "Data Not";
         }
-        mysqli_free_result ($result);
         mysqli_close($conn); 
     }
 ?>
@@ -23,10 +22,13 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post" autocomplete="off" enctype="text/plain">
+    <form action="" method="post" autocomplete="off">
         <label for="notification">Zadat notifikaciu</label>
-        <input type="text" name="notification" id="notification" required value="" rows="4" cols="50">
+        <input type="text" name="notification" id="notification" required value="">
         <button type="submit" name="submit">Odoslat</button>
     </form>
+    <button type="button" name="on">Zapnut</button>
+    <button type="button" name="off">Vypnut</button>
+    <script src="../js/script.js"></script>
 </body>
 </html>

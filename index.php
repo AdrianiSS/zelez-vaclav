@@ -3,7 +3,10 @@
     <div class="popup">
         <div class="popup-content">
             <h1>X</h1>
-            <p><?php  ?>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto reiciendis, assumenda adipisci, voluptates porro eaque amet ducimus hic dignissimos laudantium sed blanditiis, nulla cum. Ut odit cum illum, pariatur similique magnam, dolore praesentium reprehenderit dolor minima quae ipsam, fugit voluptates. Non eligendi beatae dicta cupiditate unde incidunt, debitis inventore dolore sunt quis tempore mollitia veritatis est ipsam expedita. Repellat corrupti maxime sapiente perferendis earum, asperiores modi pariatur quod, ab distinctio mollitia animi tempora autem ratione tempore suscipit veniam eveniet amet in illo? Repellat aperiam in dolores sed nulla rerum libero, nostrum minima? Soluta, dolorem est? Beatae aspernatur eveniet explicabo aliquid?</p>
+            <?php  $result = mysqli_query($conn, "SELECT * FROM notifications ORDER BY id DESC"); ?>
+            <?php foreach ($result as $row): ?>
+            <p><?php $row["notification"] ?></p>
+            <?php endforeach; ?>
             <h2>Železiarstvo <span>VÁCLAV</span></h2>
         </div>
     </div>
