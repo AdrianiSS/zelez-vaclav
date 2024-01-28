@@ -398,7 +398,7 @@ main {
 }
 
 .popup p {
-    font-size: 16px;
+    font-size: 36px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-align: center;
 }
@@ -591,6 +591,26 @@ footer {
     text-align: center;
     padding-top: 3em;
     padding-right: 6em;
+}
+
+.news {
+    background-color: #FFF;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.news h1 {
+    font-size: 36px;
+    color: #000;
+    text-align: center;
+    padding-bottom: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.news-text {
+    margin-top: 10px; /* Add top margin for spacing */
+    text-align: center; /* Adjust text alignment as needed */
+    color: #333;
 }
 
 /* Clearfix (clear floats) */
