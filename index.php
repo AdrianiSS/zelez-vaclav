@@ -3,10 +3,14 @@
     <div class="popup">
         <div class="popup-content">
             <h1>X</h1>
-            <?php  $result = mysqli_query($conn, "SELECT * FROM notifications ORDER BY id DESC"); ?>
-            <?php foreach ($result as $row): ?>
-            <p><?php $row["notification"] ?></p>
-            <?php endforeach; ?>
+            <?php
+            $result = mysqli_query($conn, "SELECT * FROM notifications ORDER BY id DESC LIMIT 1");
+            $lastNotification = mysqli_fetch_assoc($result);
+            ?>
+            <?php if ($lastNotification): ?>
+                <p><?php echo $lastNotification["notification"]; ?></p>
+            <?php endif; ?>
+
             <h2>Železiarstvo <span>VÁCLAV</span></h2>
         </div>
     </div>

@@ -9,7 +9,7 @@
 html,
 body {
     font-family: 'Impact', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-image: url('../img/layout.png');
+    background-image: url('../img/back_main.png');
 }
 
 a, a:hover {
@@ -356,7 +356,7 @@ main {
 
 .popup-content {
     width: 40vw;
-    background-image: url('../img/layout.png');
+    background-image: url('../img/back_main.png');
     padding: 5rem 5rem 0rem 5rem;
     border: 5px solid #FF7200;
     border-radius: .5em;

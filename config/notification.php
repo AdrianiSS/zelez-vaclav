@@ -12,6 +12,16 @@
         }
         mysqli_close($conn); 
     }
+
+    if (isset($_POST["on"])) {
+        $sqlUpdateStatus = "UPDATE notifications SET status = 1";
+        mysqli_query($conn, $sqlUpdateStatus);
+    }
+
+    if (isset($_POST["off"])) {
+        $sqlUpdateStatus = "UPDATE notifications SET status = 0";
+        mysqli_query($conn, $sqlUpdateStatus);
+    }
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +37,12 @@
         <input type="text" name="notification" id="notification" required value="">
         <button type="submit" name="submit">Odoslat</button>
     </form>
-    <button type="button" name="on">Zapnut</button>
-    <button type="button" name="off">Vypnut</button>
+    <form action="" method="post">
+        <button type="submit" name="on">Zapnut</button>
+        <button type="submit" name="off">Vypnut</button>
+    </form>
+    <button id="togglePopupButton">Toggle Popup</button>
+    
     <script src="../js/script.js"></script>
 </body>
 </html>
