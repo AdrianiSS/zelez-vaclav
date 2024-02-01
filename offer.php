@@ -1,5 +1,5 @@
-<?php require ('../zelez-vaclav/partials/header.php'); ?>
-<?php require ('../zelez-vaclav/config/connection.php'); ?>
+<?php require_once ('../zelez-vaclav/partials/header.php'); ?>
+<?php require_once ('../zelez-vaclav/config/connection.php'); ?>
         <section class="products">
             <h1>Produkty</h1>
             <div class="products-container">
@@ -28,16 +28,13 @@
                 <h3>Zapožičať si môžete:</h3>
                 <div class="products-items">
                     <div class="box">
-                        <?php 
-                            $i = 1;
-                            $rows = mysqli_query($conn, "SELECT * FROM tb_upload ORDER BY id DESC");
-                        ?>
+                        <?php $rows = mysqli_query($conn, "SELECT * FROM tb_upload ORDER BY id DESC"); ?>
                         <?php 
                             foreach ($rows as $row) :
                         ?>
                         <div class="box-items">
-                            <h1><?php echo $row["name"]; ?></h1>
-                            <img class="img-click" src="../zelez-vaclav/tmp/<?php echo $row['image']; ?>" width="300" height="300" title="<?php echo $row['image']; ?>">
+                            <h1><?= htmlspecialchars($row["name"]); ?></h1>
+                            <img class="img-click" src="../zelez-vaclav/tmp/<?= htmlspecialchars($row['image']); ?>" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
                         </div>
                         <?php endforeach; ?>
                     </div>
@@ -48,6 +45,6 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="../zelez-vaclav/js/script.js"></script>
-<?php require ('../zelez-vaclav/partials/footer.php') ?>
+<?php require_once ('../zelez-vaclav/partials/footer.php') ?>
 </body>
 </html>

@@ -1,9 +1,11 @@
-<?php require ('../zelez-vaclav/partials/header.php') ?>
+<?php require_once ('../zelez-vaclav/partials/header.php') ?>
         <section class="contact-info">
-            <h1>Zeleziarstvo VACLAV</h1>
+            <h1>Železiarstvo VÁCLAV</h1>
             <div class="adress">
-                <h3 class="heading">Radoslav Václav<br>Železiarstvo VÁCLAV<br>Korešp. adresa<br>Sad Kpt. Nálepku 46-11/ 18<br>018 51 Nová Dubnica<br>Slovenská republika</h3>
-                <h3 class="opening-hours">OTVÁRACIE HODINY:<br>Pondelok - Piatok: 7.00 - 16.00h<br>Sobota: 8.00 - 11.00h</h3>
+                <address>
+                    <h3 class="heading">Radoslav Václav<br>Železiarstvo VÁCLAV<br>Korešp. adresa<br>Sad Kpt. Nálepku 46-11/ 18<br>018 51 Nová Dubnica<br>Slovenská republika</h3>
+                    <h3 class="opening-hours">OTVÁRACIE HODINY:<br>Pondelok - Piatok: 7.00 - 16.00h<br>Sobota: 8.00 - 11.00h</h3>
+                </address>
             </div>
             <div class="info-map">
                 <p>
@@ -24,6 +26,6 @@
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
-    <?php require ('../zelez-vaclav/partials/footer.php') ?>
+    <?php require_once ('../zelez-vaclav/partials/footer.php') ?>
 </body>
 </html>
