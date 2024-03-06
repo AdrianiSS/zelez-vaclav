@@ -1,12 +1,6 @@
-<<<<<<< HEAD
-<?php require ('../zelez-vaclav/partials/header.php'); ?>
-<?php require ('../zelez-vaclav/config/connection.php'); ?>
-    <!-- <div class="popup">
-=======
 <?php require_once ('../zelez-vaclav/partials/header.php'); ?>
 <?php require_once ('../zelez-vaclav/config/connection.php'); ?>
     <div class="popup">
->>>>>>> 39a5d0115a0ad1fb09347f97f6c60884f9109ab1
         <div class="popup-content">
             <h1>X</h1>
             <?php
