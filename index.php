@@ -1,6 +1,6 @@
 <?php require ('../zelez-vaclav/partials/header.php'); ?>
 <?php require ('../zelez-vaclav/config/connection.php'); ?>
-    <div class="popup">
+    <!-- <div class="popup">
         <div class="popup-content">
             <h1>X</h1>
             <?php
@@ -13,7 +13,7 @@
 
             <h2>Železiarstvo <span>VÁCLAV</span></h2>
         </div>
-    </div>
+    </div> -->
         <section class="info">
             <div class="heading">
                 <h1>
