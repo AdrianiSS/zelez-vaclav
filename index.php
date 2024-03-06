@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 <?php require ('../zelez-vaclav/partials/header.php'); ?>
 <?php require ('../zelez-vaclav/config/connection.php'); ?>
     <!-- <div class="popup">
+=======
+<?php require_once ('../zelez-vaclav/partials/header.php'); ?>
+<?php require_once ('../zelez-vaclav/config/connection.php'); ?>
+    <div class="popup">
+>>>>>>> 39a5d0115a0ad1fb09347f97f6c60884f9109ab1
         <div class="popup-content">
             <h1>X</h1>
             <?php
@@ -8,7 +14,7 @@
             $lastNotification = mysqli_fetch_assoc($result);
             ?>
             <?php if ($lastNotification): ?>
-                <p><?php echo $lastNotification["notification"]; ?></p>
+                <p><?= htmlspecialchars($lastNotification["notification"]); ?></p>
             <?php endif; ?>
 
             <h2>Železiarstvo <span>VÁCLAV</span></h2>
@@ -16,12 +22,8 @@
     </div> -->
         <section class="info">
             <div class="heading">
-                <h1>
-                    Železiarstvo <strong>Václav</strong>
-                </h1>
-                <p>
-                    Požičovňa a predaj nástrojov
-                </p>
+                <h1>Železiarstvo <strong>Václav</strong></h1>
+                <p>Požičovňa a predaj nástrojov</p>
             </div>
             <div class="row">
                 <div class="column">
@@ -117,7 +119,7 @@
         </section>
     </main>
 
-    <?php require ('../zelez-vaclav/partials/footer.php') ?>
+    <?php require_once ('../zelez-vaclav/partials/footer.php') ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>

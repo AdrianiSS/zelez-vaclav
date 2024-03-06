@@ -1,7 +1,7 @@
-<?php require ('../zelez-vaclav/partials/header.php') ?>
+<?php require_once ('../zelez-vaclav/partials/header.php') ?>
 
 <div class="gdpr">
-    <h1>Ochrana osobnych udajov</h1>
+    <h1>Ochrana osobných údajov</h1>
     <p>
         V súvislosti s problematikou ochrany osobných údajov prijímame primerané technické a organizačné bezpečnostné opatrenia, aby sme vaše údaje v čo najširšej miere chránili v zmysle Zákona č.18/2018 Z.z. o ochrane osobných údajov.
         Vaše práva
@@ -25,4 +25,4 @@
     </p>
 </div>
 
-<?php require ('../zelez-vaclav/partials/footer.php') ?>
+<?php require_once ('../zelez-vaclav/partials/footer.php') ?>
