@@ -7,7 +7,7 @@
         </div>
         <ul class="list">
             <li>
-                <a href="gdpr.php">Ochrana Osobnych udajov</a>
+                <a href="gdpr.php">Ochrana Osobných údajov</a>
             </li>
             <li>
                 <a href="offer.php">Ponuka</a>
@@ -20,7 +20,7 @@
             </li>  
         </ul>
         <p class="copyright">
-            Vsetky prava su vyhradene @ 2023
+            Všetky práva sú vyhradené @ 2023
         </p>
     </div>
 </footer>

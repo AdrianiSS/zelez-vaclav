@@ -1,5 +1,9 @@
 <?php require_once ('../zelez-vaclav/partials/header.php'); ?>
 <?php require_once ('../zelez-vaclav/config/connection.php'); ?>
+<?
+    header ("location: https://www.zeleziarstvovaclav.sk/");
+    exit;
+?>
     <div class="popup">
         <div class="popup-content">
             <h1>X</h1>
