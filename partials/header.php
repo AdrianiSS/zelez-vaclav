@@ -14,8 +14,8 @@
             <a href="index.php"><img src="img/logo-nav.png" alt="zeleziarstvovaclav"></a>
         </div>
         <div class="toggle">
-            <a href="#"><ion-icon name="menu-outline"></ion-icon></a>
-            <a href="#"><ion-icon name="close-outline"></ion-icon></a>
+            <a><ion-icon name="menu-outline"></ion-icon></a>
+            <a><ion-icon name="close-outline"></ion-icon></a>
         </div>
         <ul class="menu">
             <li><a href="index.php">Domov</a></li>

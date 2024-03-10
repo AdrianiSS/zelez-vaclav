@@ -1,4 +1,12 @@
 <?php 
+    session_start();
+
+    if (!isset($_SESSION['username'])) {
+        // Redirect to the login page if not logged in
+        header("Location: login.php");
+        exit();
+    }
+    
     require 'connection.php';
     if (isset($_POST["submit"])){
         $name = $_POST["name"];
@@ -53,6 +61,7 @@
     <title>Nahratie obrazkov</title>
 </head>
 <body>
+    <h2>Welcome to the Dashboard, <?php echo $_SESSION["username"]; ?>!</h2>
     <form class="" action="" method="post" autocomplete="off" enctype="multipart/form-data">
         <label for="name">Nazov: </label>
         <input type="text" name="name" id="name" required value=""> <br>
@@ -62,6 +71,7 @@
     </form>
     <br>
     <a href="../offer.php">Spat na ponuku</a>
+    <a href="logout.php">Logout</a>
     <script src="../js/script.js"></script>
 </body>
 </html>
