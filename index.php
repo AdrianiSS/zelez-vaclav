@@ -1,6 +1,8 @@
-<?php require_once ('partials/header.php'); ?>
+<?php 
+    $pageTitle = "Domov";
+    require_once ('partials/header.php');
+?>
 <?php require_once ('config/connection.php'); ?>
-
         
         <section class="info">
             <div class="heading">

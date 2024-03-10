@@ -1,5 +1,9 @@
-<?php require_once ('../zelez-vaclav/partials/header.php'); ?>
+<?php 
+    $pageTitle = "Ponuka";
+    require_once ('../zelez-vaclav/partials/header.php');
+?>
 <?php require_once ('../zelez-vaclav/config/connection.php'); ?>
+
         <section class="products">
             <h1>Produkty</h1>
             <div class="products-container">

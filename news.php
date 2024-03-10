@@ -1,5 +1,11 @@
-<?php require_once ('../zelez-vaclav/partials/header.php') ?>
+<?php
+    $pageTitle = "Novinky";
+    require_once ('../zelez-vaclav/partials/header.php')
+?>
 <?php require_once ('../zelez-vaclav/config/connection.php'); ?>
+<?php
+    $pageTitle = "Novinky";
+?>
         <section class="news">
             <h1>Novinky</h1>
             <div class="products-items">

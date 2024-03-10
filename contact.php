@@ -1,4 +1,7 @@
-<?php require_once ('../zelez-vaclav/partials/header.php') ?>
+<?php
+    $pageTitle = "Kontakt";
+    require_once ('../zelez-vaclav/partials/header.php')
+?>
         <section class="contact-info">
             <h1>Železiarstvo VÁCLAV</h1>
             <div class="adress">
