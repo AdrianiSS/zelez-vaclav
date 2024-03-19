@@ -2,7 +2,7 @@
     $pageTitle = "Ponuka";
     require_once ('../zelez-vaclav/partials/header.php');
 ?>
-<?php require_once ('../zelez-vaclav/config/connection.php'); ?>
+<?php require_once ('./config/connection.php'); ?>
 
         <section class="products">
             <h1>Produkty</h1>
@@ -38,7 +38,7 @@
                         ?>
                         <div class="box-items">
                             <h1><?= htmlspecialchars($row["name"]); ?></h1>
-                            <img class="img-click" src="../zelez-vaclav/tmp/<?= htmlspecialchars($row['image']); ?>" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
+                            <img class="img-click" src="./tmp/<?= htmlspecialchars($row['image']); ?>" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
                         </div>
                         <?php endforeach; ?>
                     </div>

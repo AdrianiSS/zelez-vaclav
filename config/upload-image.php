@@ -1,56 +1,66 @@
-<?php 
-    session_start();
+<?php
+session_start();
 
-    if (!isset($_SESSION['username'])) {
-        // Redirect to the login page if not logged in
-        header("Location: login.php");
-        exit();
-    }
-    
-    require 'connection.php';
-    if (isset($_POST["submit"])){
-        $name = $_POST["name"];
-        if($_FILES["image"]["error"] === 4){
-           echo
-                "<script>
-                    alert('Obrazok neexistuje')
-                </script>"; 
+if (!isset($_SESSION['username'])) {
+    // Redirect to the login page if not logged in
+    header("Location: login.php");
+    exit();
+}
+
+require 'connection.php';
+
+if (isset($_POST["submit"])) {
+    $name = $_POST["name"];
+
+    if ($_FILES["image"]["error"] === 4) {
+        echo "<script>alert('Vyberte obrazok')</script>";
+    } else {
+        $fileName = $_FILES["image"]["name"];
+        $fileSize = $_FILES["image"]["size"];
+        $tmpName = $_FILES["image"]["tmp_name"];
+
+        $validImageExtension = ['jpg', 'jpeg', 'png'];
+        $imageExtension = explode('.', $fileName);
+        $imageExtension = strtolower(end($imageExtension));
+
+        if (!in_array($imageExtension, $validImageExtension)) {
+            echo "<script>alert('Nepodporovany format')</script>";
+        } elseif ($fileSize > 1000000) {
+            echo "<script>alert('Velkost obrazka je prilis velka')</script>";
+        } else {
+            $newImageName = uniqid() . '.' . $imageExtension;
+            $uploadDirectory = 'D:/xampp/htdocs/zelez-vaclav/tmp/';
+
+            move_uploaded_file($tmpName, $uploadDirectory . $newImageName);
+
+            // Use a prepared statement to prevent SQL injection
+            $query = "INSERT INTO tb_upload (name, image) VALUES(?, ?)";
+            $stmt = mysqli_prepare($conn, $query);
+
+            // Check if the prepared statement was successful
+            if ($stmt) {
+                // Bind parameters to the statement
+                mysqli_stmt_bind_param($stmt, 'ss', $name, $newImageName);
+
+                // Execute the statement
+                mysqli_stmt_execute($stmt);
+
+                // Close the statement
+                mysqli_stmt_close($stmt);
+
+                header("Location: " . $_SERVER['PHP_SELF']);
+                exit();
+
+                echo "<script>
+                        alert('Obrazok bol pridany');
+                      </script>";
+            } else {
+                // Handle the error if the prepared statement fails
+                echo "<script>alert('Prepared statement failed');</script>";
+            }
         }
-        else{
-            $fileName = $_FILES["image"]["name"];
-            $fileSize = $_FILES["image"]["size"];
-            $tmpName = $_FILES["image"]["tmp_name"];
-
-            $validImageExtension = ['jpg', 'jpeg', 'png'];
-            $imageExtension = explode('.', $fileName);
-            $imageExtension = strtolower(end($imageExtension));
-            if(!in_array($imageExtension, $validImageExtension)){
-                echo
-                    "<script>
-                        alert('Nepodporovany format')
-                    </script>";
-            }
-            elseif($fileSize > 1000000){
-                echo
-                    "<script>
-                        alert('Velkost obrazka je prilis velka')
-                    </script>";
-            }
-            else{
-                $newImageName = uniqid();
-                $newImageName .= '.' . $imageExtension;
-
-                move_uploaded_file($tmpName, '/Users/adrianzivcic/www/zelez-vaclav/tmp/' . $newImageName);
-                $query = "INSERT INTO tb_upload (name, image) VALUES('$name', '$newImageName')";
-                mysqli_query($conn, $query);
-                echo
-                    "<script>
-                        alert('Obrazok bol pridany')
-                        document.location.href = '../offer.php'
-                    </script>";
-            }
-        }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +79,20 @@
         <input type="file" name="image" id="image" accept=".jpg, .jpeg, .png"> <br> <br>
         <button type="submit" name="submit">Ulozit</button>
     </form>
+    <?php
+        $rows = mysqli_query($conn, "SELECT * FROM tb_upload ORDER BY id DESC");
+        foreach ($rows as $row) :
+    ?>
+        <tr>
+            <td><?= htmlspecialchars($row["name"]); ?></td>
+            <td>
+                <img src="../tmp/<?= htmlspecialchars($row['image']); ?>" width="100" height="100" alt="<?= htmlspecialchars($row['image']); ?>">
+            </td>
+            <td>
+                <a href="delete-image.php?image_id=<?= $row['id']; ?>" onclick="return confirm('Are you sure you want to delete this image?')">Delete</a>
+            </td>
+        </tr>
+        <?php endforeach; ?>
     <br>
     <a href="../offer.php">Spat na ponuku</a>
     <a href="logout.php">Logout</a>
