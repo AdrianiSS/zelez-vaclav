@@ -1,6 +1,6 @@
 <?php 
     $pageTitle = "Ponuka";
-    require_once ('../zelez-vaclav/partials/header.php');
+    require_once ('partials/header.php');
 ?>
 <?php require_once ('./config/connection.php'); ?>
 
@@ -32,15 +32,17 @@
                 <h3>Zapožičať si môžete:</h3>
                 <div class="products-items">
                     <div class="box">
-                        <?php $rows = mysqli_query($conn, "SELECT * FROM tb_upload ORDER BY id DESC"); ?>
+                        <?php $stmt = $conn->prepare("SELECT name, image FROM tb_upload ORDER BY id DESC"); ?>
                         <?php 
-                            foreach ($rows as $row) :
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            while ($row = $result->fetch_assoc()) :
                         ?>
                         <div class="box-items">
                             <h1><?= htmlspecialchars($row["name"]); ?></h1>
-                            <img class="img-click" src="./tmp/<?= htmlspecialchars($row['image']); ?>" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
+                            <img class="img-click" src="./config/tmp/<?= htmlspecialchars($row['image']); ?>" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
                         </div>
-                        <?php endforeach; ?>
+                        <?php endwhile; ?>
                     </div>
                 </div>
             </section>
@@ -48,7 +50,7 @@
         
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="../zelez-vaclav/js/script.js"></script>
-<?php require_once ('../zelez-vaclav/partials/footer.php') ?>
+    <script src="./js/script.js"></script>
+<?php require_once ('./partials/footer.php') ?>
 </body>
 </html>

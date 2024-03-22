@@ -290,7 +290,6 @@ main {
     display: flex;
     margin: 0 auto;
     text-align: center;
-    width: calc(var(--width, 0) * 1%);
     min-width: 2rem;
     max-width: 90%;
     background-color: #FF7200;
@@ -328,8 +327,8 @@ main {
 }
 
 .products-items img {
-    width: 300px;
-    height: 200px;
+    width: 185px;
+    height: 230px;
     border: 2px solid #1F1E21;
     border-radius: 13px;
     box-shadow: 4px 7px 7px 0px #FF7200;
@@ -339,8 +338,7 @@ main {
 }
 
 .products-items img:hover {
-    filter: grayscale(1);
-    transform: scale(1.03);
+    transform: scale(1.2);
 }
 
 

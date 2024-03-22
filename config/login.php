@@ -1,6 +1,6 @@
 <?php 
 session_start();
-require_once ('connection.php');
+require_once('connection.php');
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -8,22 +8,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Sanitize user input to prevent SQL injection (you can use prepared statements for better security)
+    // Sanitize user input to prevent SQL injection
     $username = mysqli_real_escape_string($conn, $username);
-    $password = mysqli_real_escape_string($conn, $password);
 
-    // Query the database to check user credentials
-    $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+    // Query the database to retrieve hashed password for the given username
+    $query = "SELECT id, username, password FROM user WHERE username='$username'";
     $result = $conn->query($query);
 
     if ($result->num_rows == 1) {
-        $_SESSION['username'] = $username;
-        // Valid credentials, redirect to dashboard
-        header("Location: upload-image.php");
-        exit();
+        // Fetch user data
+        $row = $result->fetch_assoc();
+        $stored_password = $row['password'];
+
+        // Verify password
+        if (password_verify($password, $stored_password)) {
+            // Password is correct, set session and redirect to dashboard
+            $_SESSION['username'] = $row['username'];
+            header("Location: upload-image.php");
+            exit();
+        } else {
+            // Invalid password
+            $error_message = "Neplatné meno alebo heslo. Prosím, skúste to znovu.";
+        }
     } else {
-        // Invalid credentials, display an error message
-        echo "Neplatne meno alebo heslo. Prosim, skuste to znovu.";
+        // User not found
+        $error_message = "Používateľ s daným menom neexistuje.";
     }
 
     // Close the database connection
@@ -39,7 +48,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login Page</title>
 </head>
 <body>
-    <h2>Prihlasenie</h2>
+    <h2>Prihlásenie</h2>
     
     <?php
     // Display error message if login fails
@@ -54,9 +63,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="password">Heslo:</label>
         <input type="password" id="password" name="password" required><br>
-
-        <input type="submit" value="Prihlasit sa">
+        <br>
+        <input type="submit" value="Prihlásiť sa">
     </form>
+    <br>
     <a href="../index.php">DOMOV</a>
 </body>
 </html>
