@@ -120,6 +120,5 @@
     <br>
     <a href="./offer.php">Späť na ponuku</a>
     <a href="logout.php">Odhlásiť sa!</a>
-    <script src="../js/script.js"></script>
 </body>
 </html>
