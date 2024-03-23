@@ -334,9 +334,8 @@ main {
   margin: 10px;
   transition: 400ms;
 }
-.products-items img:hover {
-  filter: grayscale(1);
-  transform: scale(1.03);
+.box-items:hover {
+  transform: scale(1.2);
 }
 
 .modal {
@@ -408,12 +407,7 @@ main {
   cursor: pointer;
 }
 
-/* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 700px){
-  .modal-content {
-      width: 100%;
-  }
-}
+
 
 footer {
   background-color: #FF7200;
@@ -602,7 +596,21 @@ footer {
     font-size: 20px;
   }
 }
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+      width: 100%;
+  }
+}
+
+
 @media only screen and (max-width: 480px) and (min-width: 320px) {
+
+  .info {
+    width: 90%;
+  }
+
   nav {
     display: block;
     position: relative;
@@ -640,13 +648,15 @@ footer {
     padding: 0.5rem;
   }
   .heading h1 {
-    font-size: 6.5vw;
+    font-size: 9.5vw;
   }
   .heading p {
     font-size: 3.3vw;
+    padding-bottom: 10px;
   }
   .row {
-    width: 100%;
+    width: 60%;
+    margin: 0 auto;
   }
   .column {
     width: 100%;
@@ -658,10 +668,12 @@ footer {
     height: auto;
   }
   .our-offer {
+    width: 90%;
     padding: 5px 0px 5px 0px;
   }
   .our-offer h2 {
     font-size: 4.875vw;
+    padding-bottom: 10px;
   }
   .slider {
     height: auto;
@@ -675,8 +687,13 @@ footer {
     min-width: 75px;
     height: auto;
   }
+
+  .about-us {
+    width: 90%;
+  }
+
   .about-us h2 {
-    font-size: 4.875vw;
+    font-size: 24px;
   }
   .container {
     display: block;
@@ -691,6 +708,107 @@ footer {
     font-size: 3.25vw;
     padding: 0;
   }
+
+  /* OFFER */
+
+  .products {
+    width: 90%;
+  }
+  
+  .products-container {
+    display: block;
+    margin: 0 0 15px 15px;
+  }
+
+  .products p {
+    font-size: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  /* NEWS */
+
+  .news {
+    width: 90%;
+  }
+
+  .news h1 {
+    font-size: 24px;
+  }
+
+  .products-items .box {
+    overflow: auto;
+    max-height: 400px;
+  }
+  
+  .products-items img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .box-items h1 {
+    font-size: 16px;
+    padding-bottom: 0;
+  }
+
+  /* CONTACT */
+
+  .contact-info {
+    width: 90%;
+    height: 100vh;
+  }
+
+  .contact-info h1 {
+    font-size: 24px;
+  }
+
+  .adress {
+    margin-top: 0;
+  }
+
+  .adress h3 {
+    margin: 0;
+  }
+
+  .heading {
+    font-size: 16px;
+  }
+
+  .opening-hours {
+    padding: 10px 0 0 0;
+    font-size: 16px;
+  }
+
+  .info-map p {
+    padding: 10px 0 0 0;
+  }
+
+
+  .info-map iframe {
+    width: 300px;
+    height: 300px;
+    padding: 15px 0 0 20px;
+    display: block;
+  }
+
+  /* GDPR */
+
+  .gdpr {
+    max-width: 90%;
+    height: auto;
+  }
+
+  .gdpr p {
+    margin: 0 10px 0 10px;
+    text-align: center;
+    max-width: 100%;
+    overflow: scroll;
+  }
+
+  footer {
+    width: 90%;
+  }
+
   .footer-container h1 {
     font-size: 4.875vw;
   }
