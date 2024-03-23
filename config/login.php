@@ -24,9 +24,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $stored_password)) {
             // Password is correct, set session and redirect to dashboard
             $_SESSION['username'] = $row['username'];
-            header("Location: upload-image.php");
-            exit();
-        } else {
+
+            function determineDestinationSite() {
+                // Perform some logic to determine the destination site
+                // For example, you could query a database based on user preferences or roles
+            
+                // Here's a simple example where we randomly choose a destination site
+                $possible_sites = ['upload-image.php', 'upload-news.php']; // Example list of sites
+                $random_index = array_rand($possible_sites); // Get a random index
+                $destination_site = $possible_sites[$random_index]; // Get the corresponding site
+            
+                return $destination_site;
+            }
+
+            $destination_site = determineDestinationSite();
+            if ($destination_site === 'upload-image.php') {
+                header("Location: upload-image.php");
+                exit();
+            }
+            elseif ($destination_site === 'upload-news.php') {
+                header("Location: upload-news.php");
+                exit();
+            }
+            else {
+                header("Location: index.php");
+        exit();
+            }
+            }
+        }   else {
             // Invalid password
             $error_message = "Neplatné meno alebo heslo. Prosím, skúste to znovu.";
         }
@@ -37,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Close the database connection
     $conn->close();
-}
 ?>
 
 <!DOCTYPE html>
