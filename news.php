@@ -37,7 +37,6 @@
             let imagePath = "./config/tmp-img-news/" + imageName;
             modal.style.display = "block";
             modalImg.src = imagePath;
-            captionText.innerHTML = imageName;
         }
 
         function closeModal(event) {
@@ -46,6 +45,13 @@
             modal.style.display = "none";
         }
     }
+
+    let modal = document.getElementById("imageModal");
+    modal.addEventListener("touchstart", function(event) {
+        if (event.target === modal) {
+            closeModal(event);
+        }
+    })
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <?php require_once ('./partials/footer.php') ?>
