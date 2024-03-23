@@ -9,8 +9,9 @@ if (!isset($_SESSION['username'])) {
 
 require 'connection.php';
 
-if (isset($_GET["image_id"])) {
+if (isset($_GET["image_id"]) && isset($_GET["source_page"])) {
     $imageId = $_GET["image_id"];
+    $sourcePage = $_GET["source_page"];
 
     // Retrieve the image information from the first table
     $query1 = "SELECT image FROM tb_upload WHERE id = ?";
@@ -57,7 +58,7 @@ if (isset($_GET["image_id"])) {
 
                         // Delete the image files from the server
                         $uploadDirectory = './config/tmp/';
-                        $uploadDirectory2 = './config/tmp-img-news';
+                        $uploadDirectory2 = './config/tmp-img-news/';
                         $imagePath1 = $uploadDirectory . $imageName1;
                         $imagePath2 = $uploadDirectory2 . $imageName2;
 
@@ -68,29 +69,8 @@ if (isset($_GET["image_id"])) {
                         if (file_exists($imagePath2)) {
                             unlink($imagePath2); // Delete the file from the second table
                         }
-
-                        function backDestinationSite() {
-                            // Perform some logic to determine the destination site
-                            // For example, you could query a database based on user preferences or roles
-                        
-                            // Here's a simple example where we randomly choose a destination site
-                            $possible_sites = ['upload-image.php', 'upload-news.php']; // Example list of sites
-                            $random_index = array_rand($possible_sites); // Get a random index
-                            $destination_site = $possible_sites[$random_index]; // Get the corresponding site
-                        
-                            return $destination_site;
-                        }
-                        $destination_site = backDestinationSite();
-                        if ($destination_site === 'upload-image.php') {
-                            header("Location: upload-image.php");
-                            exit();
-                        } elseif ($destination_site === 'upload-news.php') {
-                            header("Location: upload-news.php");
-                            exit();
-                        } else {
-                            header("Location: index.php");
-                            exit();
-                        } // Stop further execution
+                        header("Location: $sourcePage");
+                        exit();
                     } else {
                         echo "<script>alert('Failed to delete image record from the second table');</script>";
                     }
@@ -105,6 +85,10 @@ if (isset($_GET["image_id"])) {
         echo "<script>alert('Failed to retrieve image information from the first table');</script>";
     }
 } else {
-    echo "<script>alert('Image ID not provided');</script>";
+    // Handle the case where image ID or source page is not provided
+    echo "<script>alert('Image ID or Source page not provided');</script>";
+    // Redirect to a default page
+    header("Location: index.php");
+    exit();
 }
 ?>

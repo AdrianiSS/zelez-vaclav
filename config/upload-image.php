@@ -111,7 +111,9 @@
                 <input type="file" name="image" id="edit_image" accept=".jpg, .jpeg, .png">
                 <input type="hidden" name="image_id" value="<?= $row['id']; ?>">
                 <button type="submit" name="submit">Upraviť</button>
-                <a href="delete-image.php?image_id=<?= $row['id']; ?>" onclick="return confirm('Naozaj chcete vymazať obrázok?')">Vymazať</a>
+                <a href="delete-image.php?image_id=<?= $row['id']; ?>&source_page=upload-image.php">Vymazat</a>
+
+
             </form>
         </div>
         <img src="./tmp/<?= htmlspecialchars($row['image']); ?>" width="100" height="100" alt="<?= htmlspecialchars($row['image']); ?>">
