@@ -18,14 +18,36 @@
                         ?>
                         <div class="box-items">
                             <h1><?= htmlspecialchars($row["name"]); ?></h1>
-                            <img class="img-click" src="./config/tmp-img-news/<?= htmlspecialchars($row['image']); ?>" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
+                            <img class="img-click" src="./config/tmp-img-news/<?= htmlspecialchars($row['image']); ?>" onclick="openModal('<?= htmlspecialchars($row['image']); ?>')" width="300" height="300" title="<?= htmlspecialchars($row['image']); ?>">
                         </div>
                         <?php endwhile; ?>
                 </div>
             </div>
         </section>
+        <div id="imageModal" class="modal" onclick="closeModal(event)">
+            <img class="modal-content" id="fullSizeImage">
+            <div id="caption"></div>
+        </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        function openModal(imageName) {
+            let modal = document.getElementById("imageModal");
+            let modalImg = document.getElementById("fullSizeImage");
+            let captionText = document.getElementById("caption");
+            let imagePath = "./config/tmp-img-news/" + imageName;
+            modal.style.display = "block";
+            modalImg.src = imagePath;
+            captionText.innerHTML = imageName;
+        }
+
+        function closeModal(event) {
+            if (event.target.classList.contains("modal") || event.target.classList.contains("close")) {
+            let modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        }
+    }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <?php require_once ('./partials/footer.php') ?>
 </body>
 </html>
