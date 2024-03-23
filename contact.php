@@ -1,6 +1,6 @@
 <?php
     $pageTitle = "Kontakt";
-    require_once ('../zelez-vaclav/partials/header.php')
+    require_once ('partials/header.php');
 ?>
         <section class="contact-info">
             <h1>Železiarstvo VÁCLAV</h1>
@@ -28,7 +28,6 @@
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="js/script.js"></script>
-    <?php require_once ('../zelez-vaclav/partials/footer.php') ?>
+    <?php require_once ('./partials/footer.php') ?>
 </body>
 </html>

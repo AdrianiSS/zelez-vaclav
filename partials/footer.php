@@ -23,4 +23,5 @@
             Všetky práva sú vyhradené @ 2023
         </p>
     </div>
+    <script src="./js/script.js"></script>
 </footer>
