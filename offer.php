@@ -1,4 +1,10 @@
-<?php 
+<?php
+    $maintenance = true;
+
+    if ($maintenance) {
+        include 'maintenance.php';
+        exit();
+    }
     $pageTitle = "Ponuka";
     require_once ('partials/header.php');
 ?>

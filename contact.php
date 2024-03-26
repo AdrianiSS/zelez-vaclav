@@ -1,4 +1,10 @@
 <?php
+    $maintenance = true;
+
+    if ($maintenance) {
+        include 'maintenance.php';
+        exit();
+    }
     $pageTitle = "Kontakt";
     require_once ('partials/header.php');
 ?>

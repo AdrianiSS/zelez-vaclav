@@ -1,4 +1,11 @@
 <?php 
+
+    $maintenance = true;
+
+    if ($maintenance) {
+        include 'maintenance.php';
+        exit();
+    }
     $pageTitle = "Domov";
     require_once ('partials/header.php');
 ?>
@@ -11,7 +18,7 @@
             </div>
             <div class="row">
                 <div class="column">
-                    <img class="image" src="./img/banner-info.png" alt="info-banner">
+                    <img class="image" src="./img/bejner-info.png" alt="info-banner">
                 </div>
                 <div class="column">
                     <img class="image" src="./img/info-building.png" alt="info-building">

@@ -1,4 +1,13 @@
-<?php require_once ('../zelez-vaclav/partials/header.php') ?>
+<?php
+    $maintenance = true;
+
+    if ($maintenance) {
+        include 'maintenance.php';
+        exit();
+    }
+    $pageTitle = "GDPR";
+    require_once ('partials/header.php');
+?>
 
 <div class="gdpr">
     <h1>Ochrana osobných údajov</h1>
@@ -25,4 +34,4 @@
     </p>
 </div>
 
-<?php require_once ('../zelez-vaclav/partials/footer.php') ?>
+<?php require_once ('./partials/footer.php') ?>
