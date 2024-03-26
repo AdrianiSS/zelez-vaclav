@@ -572,7 +572,7 @@ footer {
   color: #333;
 }
 
-@media screen and (max-width: 1180px) {
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
   nav {
     width: 100%;
     height: auto;
@@ -591,14 +591,250 @@ footer {
     height: auto;
   }
 }
+
 @media only screen and (max-width: 1024px) and (min-width: 769px) {
-  nav a {
-    font-size: 20px;
+  .info {
+    width: 90%;
+  }
+
+  nav {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .logo a {
+    width: 75px;
+    height: 75px;
+  }
+  .logo img {
+    position: relative;
+    top: 40px;
+    width: 150px;
+    margin: 0;
+  }
+
+  .menu {
+    position: relative;
+    top: -37px;
+    display: flex;
+    justify-content: end;
+  }
+
+  .row {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .column {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .column img {
+    max-width: 80%;
+    min-width: 150px;
+    height: auto;
+  }
+
+  .our-offer {
+    width: 90%;
+    padding: 5px 0px 5px 0px;
+  }
+  .our-offer h2 {
+    font-size: 4.875vw;
+    padding-bottom: 10px;
+  }
+  .slider {
+    height: auto;
+  }
+  .slide {
+    height: 100px;
+    width: 100px;
+  }
+  .slide img {
+    max-width: 80%;
+    min-width: 75px;
+    height: auto;
+  }
+
+  .about-us {
+    width: 90%;
+  }
+
+  .about-us h2 {
+    font-size: 24px;
+  }
+  .container {
+    display: block;
+    width: 100%;
+  }
+  .container img {
+    max-width: 50%;
+    position: relative;
+    left: 25%;
+  }
+  .container p {
+    font-size: 3.25vw;
+    padding: 0;
+  }
+
+
+
+
+  footer {
+    width: 90%;
+  }
+
+  .footer-container h1 {
+    font-size: 4.875vw;
+  }
+  .footer-container .socials {
+    padding-bottom: 5px;
+  }
+  .footer-container .socials a {
+    font-size: 4.875vw;
+    padding: 2px;
+  }
+  .footer-container ul {
+    font-size: 3vw;
+  }
+  .footer-container ul li {
+    padding: 0 1px 0 1px;
+  }
+  .copyright {
+    font-size: 3vw;
   }
 }
 
 /* 100% Image Width on Smaller Screens */
-@media only screen and (max-width: 768px) and (min-width: 320px){
+@media only screen and (max-width: 768px) and (min-width: 481px){
+
+  .info {
+    width: 90%;
+  }
+
+  nav {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 0;
+  }
+
+  .logo a {
+    width: 50px;
+    height: 50px;
+  }
+  .logo img {
+    position: relative;
+    top: 6px;
+    width: 75px;
+    margin: 0;
+  }
+  .toggle {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    display: block;
+    position: absolute;
+    top: 6px;
+  }
+  .menu {
+    margin-top: 15px;
+    display: none;
+  }
+  .menu.active {
+    display: block;
+  }
+  .menu.active li {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .row {
+    width: 60%;
+    margin: 0 auto;
+  }
+  .column {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .column img {
+    max-width: 80%;
+    min-width: 150px;
+    height: auto;
+  }
+
+  .our-offer {
+    width: 90%;
+    padding: 5px 0px 5px 0px;
+  }
+  .our-offer h2 {
+    font-size: 4.875vw;
+    padding-bottom: 10px;
+  }
+  .slider {
+    height: auto;
+  }
+  .slide {
+    height: 100px;
+    width: 100px;
+  }
+  .slide img {
+    max-width: 80%;
+    min-width: 75px;
+    height: auto;
+  }
+
+  .about-us {
+    width: 90%;
+  }
+
+  .about-us h2 {
+    font-size: 24px;
+  }
+  .container {
+    display: block;
+    width: 100%;
+  }
+  .container img {
+    max-width: 50%;
+    position: relative;
+    left: 25%;
+  }
+  .container p {
+    font-size: 3.25vw;
+    padding: 0;
+  }
+
+
+
+
+  footer {
+    width: 90%;
+  }
+
+  .footer-container h1 {
+    font-size: 4.875vw;
+  }
+  .footer-container .socials {
+    padding-bottom: 5px;
+  }
+  .footer-container .socials a {
+    font-size: 4.875vw;
+    padding: 2px;
+  }
+  .footer-container ul {
+    font-size: 3vw;
+  }
+  .footer-container ul li {
+    padding: 0 1px 0 1px;
+  }
+  .copyright {
+    font-size: 3vw;
+  }
+
   .modal-content {
       width: 100%;
   }
